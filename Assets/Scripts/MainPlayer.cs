@@ -1,17 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class MainPlayer : MonoBehaviour
 {
     bool dead;
+    public GameObject bulletPrefab;
     public int live;
+    bool shootRight;
 
     // Start is called before the first frame update
     void Start()
     {
-        bool=false;
+        dead=false;
         live=3;
+        shootRight=  true;
     }
 
     // Update is called once per frame
@@ -24,11 +26,13 @@ public class MainPlayer : MonoBehaviour
             move(1);
         }
         if(Input.GetKeyDown("space")){
-            shoot()
+            shoot();
 
         }
 
-     }   
+     }  else{
+        deathScene();
+     }
     }
 
     void move(int p){
@@ -41,8 +45,24 @@ public class MainPlayer : MonoBehaviour
      
     }
 
-    void shoot(){
+    public void RemoveLife(){
         
+        live=live-1;
+        if (live<1){
+            dead=true;
+        }
+    }
+    void shoot(){
+    GameObject bulletObject = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
+
+    Bullet bullet = bulletObject.GetComponent<Bullet>();
+    if (bullet != null)
+    {
+        bullet.movingRight = shootRight;
+    }
+    }
+    void deathScene(){
+        //screen when dead
     }
 
 }

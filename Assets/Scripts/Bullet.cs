@@ -8,7 +8,7 @@ public class Bullet : MonoBehaviour
     public int damage = 1;    // Damage inflicted on the target
 
     private Vector3 direction; // Direction of movement
-    private bool movingRight;  // Indicates if the bullet is moving to the right
+    public bool movingRight;  // Indicates if the bullet is moving to the right
 
     private void Start()
     {
@@ -32,14 +32,14 @@ public class Bullet : MonoBehaviour
                 player.RemoveLife();
                 Destroy(gameObject);
         } 
-        else if(other.CompareTag("Enemy")){
+        /*else if(other.CompareTag("Enemy")){
             Enemy E =other.GetComponent<Enemy>();
             if (E != null)
             {
                 
                 E.RemoveLife();
                  Destroy(gameObject);
-        } }
+        } }*/
                
             
         }
