@@ -12,6 +12,12 @@ public class LogicScript : MonoBehaviour
     public GameObject gameOverScreen;
     public GameObject finishScreen;
 
+    void Start()
+    {
+        // This will display "Lives: 5" at the start
+        livesText.text = "Lives: " + playerlives.ToString();
+    }
+
     public void sub_lives(int scoreToAdd)
     {
         playerlives = playerlives - scoreToAdd;
