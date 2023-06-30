@@ -156,12 +156,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myRigidbody: {fileID: 9906899}
-  flapstrength: 0
+  flapstrength: 2
   project: {fileID: 8476058965080597962, guid: 967fe965ad87c4e35bae2d54ee949938, type: 3}
   Spawnrate: 1
+  timerProj: 0
   enemyliv: 1
   logic: {fileID: 641040696}
   deadZone: 2
+  live: 1
 --- !u!58 &9906898
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -284,7 +286,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9906896}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.15, y: 1.85, z: 0}
+  m_LocalPosition: {x: 9.15, y: 3.85, z: 0}
   m_LocalScale: {x: -1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -324,12 +326,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myRigidbody: {fileID: 20306607}
-  flapstrength: 0
+  flapstrength: 2
   project: {fileID: 8476058965080597962, guid: 967fe965ad87c4e35bae2d54ee949938, type: 3}
   Spawnrate: 1
+  timerProj: 0
   enemyliv: 1
   logic: {fileID: 641040696}
   deadZone: -4
+  live: 3
 --- !u!58 &20306606
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -452,7 +456,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 20306604}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.15, y: -0.94, z: 0}
+  m_LocalPosition: {x: 9.15, y: -1.79, z: 0}
   m_LocalScale: {x: -1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -699,7 +703,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 6
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -941,7 +945,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 747627161}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.63, y: 0.69, z: 0}
+  m_LocalPosition: {x: -8.83, y: 0.57, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -982,12 +986,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myRigidbody: {fileID: 753621631}
-  flapstrength: 0
+  flapstrength: 2
   project: {fileID: 8476058965080597962, guid: 967fe965ad87c4e35bae2d54ee949938, type: 3}
   Spawnrate: 1
+  timerProj: 0
   enemyliv: 1
   logic: {fileID: 641040696}
   deadZone: 0
+  live: 3
 --- !u!58 &753621630
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1110,7 +1116,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 753621628}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.15, y: 0.56, z: 0}
+  m_LocalPosition: {x: 9.15, y: 0.56, z: 0}
   m_LocalScale: {x: -1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1342,8 +1348,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 904410839}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.02, y: -0.51, z: 2.2}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.0947, y: -0.0805, z: 2.2}
+  m_LocalScale: {x: 1.3345824, y: 1.0795043, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}

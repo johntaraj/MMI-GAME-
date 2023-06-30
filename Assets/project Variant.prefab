@@ -86,6 +86,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0e53182646374cc3bc2abde5e846058, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  project_volocity: 5
-  timeTilDeath: 4
+  project_volocity: 3
+  timeTilDeath: 12
   logic: {fileID: 0}
+  main: {fileID: 0}

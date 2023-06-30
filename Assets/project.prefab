@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 015f9c92dfdac4ee3b1e8555c90f27ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  project_volocity: -5
+  project_volocity: -10
   timeTilDeath: 4
   logic: {fileID: 0}
 --- !u!61 &8831053002325835145

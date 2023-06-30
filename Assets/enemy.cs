@@ -7,19 +7,19 @@ using UnityEngine;
 public class enemy : MonoBehaviour
 {
     public Rigidbody2D myRigidbody;
-    public int flapstrength;
+    [SerializeField] public int flapstrength;
     public GameObject project;
-    public float Spawnrate = 1;
-    private float timerProj = 0;
+    [SerializeField] public float Spawnrate = 1;
+    [SerializeField] private float timerProj = 10; //was 0
     public bool enemyliv = true;
     public LogicScript logic;
     public float deadZone;
-    private int live=3;
+    [SerializeField] public int live=3;
     // Start is called before the first frame update
     void Start()
     {
         Random.InitState(10);
-        flapstrength = 4;
+        flapstrength = 3;
     }
 
     // Update is called once per frame

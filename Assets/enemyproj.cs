@@ -5,7 +5,7 @@ using UnityEngine;
 public class enemyproj : MonoBehaviour
 {
     public int project_volocity;
-    public float timeTilDeath = 4;
+    public float timeTilDeath = 10;
     private float timer = 0;
     public LogicScript logic;
     public MainScript main;

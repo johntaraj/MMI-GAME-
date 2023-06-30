@@ -5,7 +5,7 @@ using UnityEngine;
 public class enemproj: MonoBehaviour
 {
     public int project_volocity;
-    public float timeTilDeath = 4;
+    public float timeTilDeath = 5;
     private float timer = 0;
     public LogicScript logic;
     // Start is called before the first frame update
