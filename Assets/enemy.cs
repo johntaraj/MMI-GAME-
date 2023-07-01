@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using TMPro;
 
 
 public class enemy : MonoBehaviour
@@ -15,11 +16,12 @@ public class enemy : MonoBehaviour
     public LogicScript logic;
     public float deadZone;
     [SerializeField] public int live=3;
+    public TextMeshPro livesText;
     // Start is called before the first frame update
     void Start()
     {
         logic = GameObject.FindGameObjectWithTag("Logic").GetComponent<LogicScript>();
-
+        livesText.text = live.ToString();
         Random.InitState(10);
         flapstrength = 3;
         Shoot();
@@ -41,6 +43,7 @@ public class enemy : MonoBehaviour
         {
             Shoot();
         }
+        livesText.text = live.ToString();
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {

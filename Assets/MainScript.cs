@@ -12,7 +12,7 @@ public class MainScript : MonoBehaviour
     public GameObject project;
     public float Spawnrate = 5.0f;
     public float timerProj = 0;
-    private float timerDef = 0;
+    public float timerDef = 0;
     public bool playeraliv = true;
     public LogicScript logic;
     public GameObject Shield;
@@ -74,7 +74,7 @@ public class MainScript : MonoBehaviour
         {
             shieldf();
         }
-        if (shield == true && timerDef > 1)
+        if (shield == true && timerDef > 2)
         {
             Shield.SetActive(false);
             shield = false;

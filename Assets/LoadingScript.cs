@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SpecialScript : MonoBehaviour
+public class LoadingScript : MonoBehaviour
 {
     [SerializeField] private Image uiFill;
-
+    public GameObject gameObject;
     public MainScript main;
     public float Spawnrate;
     public float timerProj;
@@ -14,24 +14,40 @@ public class SpecialScript : MonoBehaviour
     void Start()
     {
         main = GameObject.FindGameObjectWithTag("Main").GetComponent<MainScript>();
-        Spawnrate = main.Spawnrate;
-        timerProj = main.timerProj;
+        Debug.Log(gameObject.name);
+        getValues(gameObject.name);
     }
 
     // Update is called once per frame
     void Update()
     {
-        Spawnrate = main.Spawnrate;
-        timerProj = main.timerProj;
+        getValues(gameObject.name);
         if (timerProj < Spawnrate)
         {
-            Debug.Log("Dans update");
             uiFill.fillAmount = timerProj / Spawnrate;
-            Debug.Log(uiFill.fillAmount);
         }
         else
         {
             uiFill.fillAmount = 1;
+        }
+    }
+
+    void getValues(string name)
+    {
+        if (name == "Special")
+        {
+            Spawnrate = main.Spawnrate;
+            timerProj = main.timerProj;
+        }
+        else if (name == "Shield")
+        {
+            Spawnrate = main.Spawnrate * 5;
+            timerProj = main.timerDef;
+        }
+        else
+        {
+            Spawnrate = 1;
+            timerProj = 0;
         }
     }
 }
