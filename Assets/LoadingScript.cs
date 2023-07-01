@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class LoadingScript : MonoBehaviour
 {
     [SerializeField] private Image uiFill;
-    public GameObject gameObject;
+    //public GameObject gameObject;
     public MainScript main;
     public float Spawnrate;
     public float timerProj;
@@ -14,14 +14,19 @@ public class LoadingScript : MonoBehaviour
     void Start()
     {
         main = GameObject.FindGameObjectWithTag("Main").GetComponent<MainScript>();
-        Debug.Log(gameObject.name);
-        getValues(gameObject.name);
+        if (gameObject != null)
+        {
+            getValues(gameObject.name);
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        getValues(gameObject.name);
+        if (gameObject != null)
+        {
+            getValues(gameObject.name);
+        }
         if (timerProj < Spawnrate)
         {
             uiFill.fillAmount = timerProj / Spawnrate;
