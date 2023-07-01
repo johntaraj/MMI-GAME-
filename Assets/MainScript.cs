@@ -54,6 +54,10 @@ public class MainScript : MonoBehaviour
             downDis = true;
             moveDown();
         }
+        else if (t == "stop")
+        {
+            shieldf();
+        }
 
     }
     void Update()
@@ -122,13 +126,13 @@ public class MainScript : MonoBehaviour
 
     void moveUp()
     {
-        myRigidbody.velocity = Vector2.up * flapstrength;
+        myRigidbody.velocity = Vector2.up * flapstrength*0.5f; //changed 
     }
 
     void moveDown()
     {
-        myRigidbody.velocity = Vector2.down * flapstrength;
-    }
+        myRigidbody.velocity = Vector2.down * flapstrength*0.3f; //changed
+    } 
 
     void shieldf()
     {
