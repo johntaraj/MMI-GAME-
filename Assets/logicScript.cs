@@ -11,20 +11,23 @@ public class LogicScript : MonoBehaviour
     public Text livesText;
     public GameObject gameOverScreen;
     public GameObject finishScreen;
+    public GameObject livesScreen;
 
     void Start()
     {
         // This will display "Lives: 5" at the start
-        livesText.text = "Lives: " + playerlives.ToString();
+        livesText.text = playerlives.ToString();
     }
 
     public void sub_lives(int scoreToAdd)
     {
         playerlives = playerlives - scoreToAdd;
-        livesText.text = "lives:" + playerlives.ToString();
+        livesText.text = playerlives.ToString();
         if (playerlives <= 0 && numene!=0)
         {
             gameOverScreen.SetActive(true);
+            livesScreen.SetActive(false);
+            Time.timeScale = 0;
         }
     }
     public void deadenemy(int scoreToAdd)
@@ -33,6 +36,14 @@ public class LogicScript : MonoBehaviour
         if (playerlives >= 0 && numene <= 0)
         {
             finishScreen.SetActive(true);
+            livesScreen.SetActive(false);
+            Time.timeScale = 0;
         }
+    }
+
+    public void restartGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        Time.timeScale = 1;
     }
 }

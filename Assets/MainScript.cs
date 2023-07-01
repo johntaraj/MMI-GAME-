@@ -8,10 +8,10 @@ public class MainScript : MonoBehaviour
     private KeywordRecognizer m_Recognizer;
 
     public Rigidbody2D myRigidbody;
-    public int flapstrength;
+    public float flapstrength;
     public GameObject project;
     public float Spawnrate = 5.0f;
-    private float timerProj = 0;
+    public float timerProj = 0;
     private float timerDef = 0;
     public bool playeraliv = true;
     public LogicScript logic;
@@ -27,7 +27,7 @@ public class MainScript : MonoBehaviour
 
     void Start()
     {
-        flapstrength = 4;
+        flapstrength = 8;
         logic = GameObject.FindGameObjectWithTag("Logic").GetComponent<LogicScript>();
         m_Recognizer = new KeywordRecognizer(m_Keywords);
         m_Recognizer.OnPhraseRecognized += OnPhraseRecognized;
