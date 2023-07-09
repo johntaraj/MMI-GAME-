@@ -23,7 +23,7 @@ public class MainScript : MonoBehaviour
     private bool downDis = false;
     private bool goCommandSpoken = false; // Flag to indicate "go" command spoken
     private float goCommandTime;
-    private float maxDelay = 4.0f; // Max delay in seconds (85ms)
+    private float maxDelay = 1.0f; // Max delay in seconds (1s)
 
     void Start()
     {
@@ -40,8 +40,6 @@ public class MainScript : MonoBehaviour
 
         if (t == "shoot")
         {
-            goCommandTime = Time.time; // Save the time when "go" is spoken
-            goCommandSpoken = true; // Set flag to true
             shoot();
         }
         else if (t == "up")
@@ -54,9 +52,10 @@ public class MainScript : MonoBehaviour
             downDis = true;
             moveDown();
         }
-        else if (t == "stop")
+        else if (t == "go")
         {
-            shieldf();
+            goCommandTime = Time.time; // Save the time when "go" is spoken
+            goCommandSpoken = true; // Set flag to true
         }
 
     }
@@ -86,7 +85,7 @@ public class MainScript : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space) == true && playeraliv == true)
         {
-            if (goCommandSpoken && (Time.time - goCommandTime) <= maxDelay)
+            if (goCommandSpoken)
             {
                 StartCoroutine(shoot_special()); // Execute the special shoot
                 goCommandSpoken = false; // Reset the flag
@@ -94,10 +93,12 @@ public class MainScript : MonoBehaviour
             else
             {
                 shoot(); // Normal shoot
-                goCommandSpoken = false; // Reset the flag after a regular shoot too
+               
             }
         }
-
+        if((Time.time-goCommandTime)>maxDelay){
+             goCommandSpoken = false;
+        }
         if (logic.playerlives == 0)
         {
             playeraliv = false;
