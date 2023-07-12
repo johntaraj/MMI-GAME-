@@ -17,7 +17,7 @@ public class MainScript : MonoBehaviour
     public LogicScript logic;
     public GameObject Shield;
     public bool shield = false;
-    private string[] m_Keywords = { "shoot", "up", "down", "go" };
+    private string[] m_Keywords = { "shoot", "up", "down", "go","stop" };
 
     private bool upDis = false;
     private bool downDis = false;
@@ -56,6 +56,10 @@ public class MainScript : MonoBehaviour
         {
             goCommandTime = Time.time; // Save the time when "go" is spoken
             goCommandSpoken = true; // Set flag to true
+        }
+        else if( t == "stop")
+        {
+            shieldf();
         }
 
     }
